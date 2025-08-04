@@ -1,28 +1,42 @@
 .ai-insight-engine {
-  margin-top: 1.5rem;
+  margin-top: 3rem; /* Increased spacing */
+  padding: 2rem;
+  background: var(--neutral-50);
+  border-radius: 1rem;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.03), 
+    0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.dark-mode .ai-insight-engine {
+  background: rgba(15, 23, 42, 0.6); /* slate-900 with opacity */
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.2), 
+    0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .insight-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Increased spacing */
 }
 
 .insight-header h2 {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   margin: 0;
-  font-size: 1.25rem;
-  background: linear-gradient(90deg, var(--primary-light), var(--accent-light));
+  font-size: 1.5rem; /* Larger */
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--primary-light), var(--primary-light-hover));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .dark-mode .insight-header h2 {
-  background: linear-gradient(90deg, var(--primary-dark), var(--accent-dark));
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary-dark-hover));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

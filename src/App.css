@@ -1,35 +1,64 @@
+/* Import typography system */
+@import './typography.css';
+
 #root {
   width: 100%;
   height: 100vh;
 }
 
+/* Enhanced spacing and layout */
 .dashboard-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;  /* Increased from 1.5rem */
+  margin-top: 2.5rem; /* Increased from 1.5rem */
 }
 
+/* Enhanced card animations */
 .dashboard-content .card {
   height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1); /* Smoother animation curve */
 }
 
 .dashboard-content .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px) scale(1.01); /* Subtle scale effect */
+  box-shadow: 
+    0 12px 24px -10px rgba(91, 33, 182, 0.15), 
+    0 4px 16px -8px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-light-hover);
 }
 
 .dark-mode .dashboard-content .card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    0 12px 24px -10px rgba(167, 139, 250, 0.2),
+    0 4px 16px -8px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary-dark-hover);
 }
 
+/* Improved heading typography */
 h1 {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: var(--text-light);
 }
 
 .dark-mode h1 {
   color: var(--text-dark);
+}
+
+/* Consistent sections spacing */
+.dashboard-section {
+  margin-bottom: 3rem;
+}
+
+/* Responsive spacing adjustments */
+@media (max-width: 768px) {
+  .dashboard-content {
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .dashboard-section {
+    margin-bottom: 2.5rem;
+  }
 }

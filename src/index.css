@@ -1,48 +1,75 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 :root {
-  /* WCAG-compliant HSL Color System for Light Mode */
+  /* Refined Color System - Primary Violet Theme */
   --background-light: #ffffff;
   --text-light: #18181b; /* zinc-900 - Enhanced contrast */
   --text-light-secondary: #3f3f46; /* zinc-700 */
   --text-light-tertiary: #52525b; /* zinc-600 */
-  --primary-light: #6d28d9; /* violet-700 - Enhanced contrast */
-  --secondary-light: #4b5563; /* gray-600 - Better contrast */
-  --accent-light: #7c3aed; /* violet-600 */
-  --surface-light: #f4f4f5; /* zinc-100 */
-  --border-light: #e4e4e7; /* zinc-200 */
-  --card-bg-light: rgba(255, 255, 255, 0.95); /* More opaque for better readability */
-  --card-text-light: #18181b; /* zinc-900 */
-  --card-border-light: rgba(228, 228, 231, 0.6); /* zinc-200 with opacity */
-  --hover-light: rgba(109, 40, 217, 0.1); /* violet-700 with opacity */
   
-  /* WCAG-compliant HSL Color System for Dark Mode */
-  --background-dark: #18181b; /* zinc-900 - Darkest */
-  --text-dark: #f4f4f5; /* zinc-100 - High contrast */
-  --text-dark-secondary: #d4d4d8; /* zinc-300 */
-  --text-dark-tertiary: #a1a1aa; /* zinc-400 */
+  /* Single primary accent with shades */
+  --primary-light: #5b21b6; /* violet-800 - Deeper, more professional */
+  --primary-light-hover: #7c3aed; /* violet-600 - Brighter on hover */
+  --primary-light-muted: #ddd6fe; /* violet-200 - For backgrounds */
+  --primary-light-focus: #4c1d95; /* violet-900 - For focus states */
+  
+  /* Neutral palette */
+  --neutral-50: #fafafa;
+  --neutral-100: #f4f4f5;
+  --neutral-200: #e4e4e7;
+  --neutral-300: #d4d4d8;
+  --neutral-400: #a1a1aa;
+  --neutral-500: #71717a;
+  --neutral-600: #52525b;
+  --neutral-700: #3f3f46;
+  --neutral-800: #27272a;
+  --neutral-900: #18181b;
+  
+  /* Surface and card colors */
+  --surface-light: var(--neutral-100);
+  --border-light: var(--neutral-200);
+  --card-bg-light: rgba(255, 255, 255, 0.95);
+  --card-text-light: var(--neutral-900);
+  --card-border-light: rgba(228, 228, 231, 0.6);
+  
+  /* Dark mode variants */
+  --background-dark: #0f172a; /* slate-900 - Richer dark background */
+  --text-dark: #f8fafc; /* slate-50 - Crisp white text */
+  --text-dark-secondary: #e2e8f0; /* slate-200 */
+  --text-dark-tertiary: #cbd5e1; /* slate-300 */
+  
+  /* Primary in dark mode */
   --primary-dark: #a78bfa; /* violet-400 - Brighter for dark backgrounds */
-  --secondary-dark: #d4d4d8; /* zinc-300 */
-  --accent-dark: #c4b5fd; /* violet-300 */
-  --surface-dark: #27272a; /* zinc-800 */
-  --border-dark: #3f3f46; /* zinc-700 */
-  --card-bg-dark: rgba(39, 39, 42, 0.95); /* zinc-800 with opacity */
-  --card-text-dark: #f4f4f5; /* zinc-100 */
-  --card-border-dark: rgba(63, 63, 70, 0.6); /* zinc-700 with opacity */
+  --primary-dark-hover: #c4b5fd; /* violet-300 - Brighter on hover */
+  --primary-dark-muted: #4c1d95; /* violet-900 - For subtle backgrounds */
+  --primary-dark-focus: #8b5cf6; /* violet-500 - For focus states */
+  
+  --surface-dark: #1e293b; /* slate-800 */
+  --border-dark: #334155; /* slate-700 */
+  --card-bg-dark: rgba(30, 41, 59, 0.95); /* slate-800 with opacity */
+  --card-text-dark: var(--text-dark);
+  --card-border-dark: rgba(51, 65, 85, 0.6); /* slate-700 with opacity */
+  
+  /* Hover states */
+  --hover-light: rgba(91, 33, 182, 0.08); /* violet-800 with opacity */
   --hover-dark: rgba(167, 139, 250, 0.15); /* violet-400 with opacity */
   
-  /* Badge Colors with Enhanced Contrast */
-  --success-color-light: #059669; /* emerald-700 - darker for better contrast */
-  --warning-color-light: #d97706; /* amber-600 - darker for better contrast */
-  --danger-color-light: #dc2626; /* red-600 - better contrast */
-  --info-color-light: #2563eb; /* blue-600 - better contrast */
+  /* Status colors - Light mode */
+  --success-color-light: #059669; /* emerald-700 */
+  --warning-color-light: #d97706; /* amber-600 */
+  --danger-color-light: #dc2626; /* red-600 */
+  --info-color-light: #2563eb; /* blue-600 */
   
-  /* Badge Colors for Dark Mode - Brighter for visibility */
+  /* Status colors - Dark mode */
   --success-color-dark: #34d399; /* emerald-400 */
   --warning-color-dark: #fbbf24; /* amber-400 */
   --danger-color-dark: #f87171; /* red-400 */
   --info-color-dark: #60a5fa; /* blue-400 */
   --recommendation-color-dark: #a78bfa; /* violet-400 */
   
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Typography */
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   
@@ -79,8 +106,8 @@ body.light-mode {
 
 body.light-mode::before {
   background-image: 
-    radial-gradient(ellipse at top, hsl(225, 100%, 94%), transparent 70%),
-    radial-gradient(ellipse at bottom, hsl(255, 100%, 95%), transparent 70%);
+    radial-gradient(ellipse at top, hsl(270, 100%, 95%), transparent 70%),
+    radial-gradient(ellipse at bottom, hsl(250, 100%, 97%), transparent 80%);
 }
 
 body.dark-mode {
@@ -90,8 +117,8 @@ body.dark-mode {
 
 body.dark-mode::before {
   background-image: 
-    radial-gradient(ellipse at top, hsl(240, 40%, 15%), transparent 70%),
-    radial-gradient(ellipse at bottom, hsl(260, 40%, 10%), transparent 70%);
+    radial-gradient(ellipse at top, hsl(260, 50%, 15%), transparent 70%),
+    radial-gradient(ellipse at bottom, hsl(280, 60%, 10%), transparent 80%);
 }
 
 a {

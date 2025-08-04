@@ -3,22 +3,25 @@
 
 .ai-insight-card {
   display: flex;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1.25rem; /* Increased padding */
+  background: var(--primary-light); /* Changed to primary color for better contrast */
+  border-radius: 0.75rem; /* Slightly more rounded */
+  border: 1px solid rgba(91, 33, 182, 0.3); /* Border matching primary color */
+  box-shadow: 
+    0 4px 12px rgba(91, 33, 182, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.04);
   overflow: hidden;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  color: white; /* White text for better contrast on dark background */
 }
 
 .ai-insight-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  border-color: var(--primary-light);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 24px rgba(91, 33, 182, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-light-hover);
 }
 
 .ai-insight-card::before {

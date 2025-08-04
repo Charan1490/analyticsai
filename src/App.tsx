@@ -1,4 +1,5 @@
 import './App.css';
+import './animations.css'; // Import animations
 import { ThemeProvider } from './contexts/ThemeContext';
 import { Layout } from './components/Layout';
 import { DashboardPage } from './pages/DashboardPage';

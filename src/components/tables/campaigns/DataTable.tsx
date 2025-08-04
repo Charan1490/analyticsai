@@ -21,6 +21,7 @@ import { Search, ChevronLeft, ChevronRight, Download, SearchX } from 'lucide-rea
 import { EmptyState } from '../../ui/EmptyState';
 import Papa from 'papaparse';
 import './DataTable.css';
+import '../EnhancedTableStyles.css';
 
 interface DataTableProps<TData> {
   columns: any[];
@@ -143,7 +144,7 @@ export function DataTable<TData>({
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  className={`interactive-row ${row.getIsSelected() ? 'selected' : ''}`}
+                  className={`interactive-row table-row ${row.getIsSelected() ? 'selected' : ''}`}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>

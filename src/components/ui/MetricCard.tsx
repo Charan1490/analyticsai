@@ -22,7 +22,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({
   return (
     <div className="metric-card">
       <div className="metric-card-top">
-        <h3 className="metric-title">{title}</h3>
+        <div className="metric-label">{title}</div>
         <div 
           className="metric-icon" 
           style={{ 
@@ -35,7 +35,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({
         </div>
       </div>
 
-      <div className="metric-value">{value}</div>
+      <div className="metric-value stagger-animate">{value}</div>
 
       <div className={`metric-change ${changeType}`}>
         {changeType === 'positive' ? (
