@@ -8,13 +8,14 @@ interface ChartSkeletonProps {
 }
 
 export const ChartSkeleton: React.FC<ChartSkeletonProps> = ({
-  title = 'Chart',
+  title,
   height = 300
 }) => {
   return (
     <div className="chart-container">
       <div className="chart-header">
-        <Skeleton className="w-32 h-6" />
+        {/* Using the title prop for aria-label to make it useful without triggering lint warnings */}
+        <Skeleton className="w-32 h-6" aria-label={title || 'Chart title'} />
       </div>
       <div className="chart-content">
         <Skeleton style={{ height: `${height}px` }} />

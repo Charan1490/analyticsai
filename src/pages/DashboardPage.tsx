@@ -7,7 +7,7 @@ import { MetricCardSkeleton } from '../components/ui/MetricCardSkeleton';
 import { ChartSkeleton } from '../components/ui/ChartSkeleton';
 import { DataTableSkeleton } from '../components/ui/DataTableSkeleton';
 import { AIInsightEngineSkeleton } from '../components/ui/AIInsightEngineSkeleton';
-import { metricData, revenueByMonth, sourceBreakdown, campaigns, conversionBreakdown } from '../data/mockData';
+import { metricData, revenueByMonth, sourceBreakdown, conversionBreakdown } from '../data/mockData';
 import type { MetricData } from '../data/mockData';
 import { PerformanceChart } from '../components/PerformanceChart';
 import { CampaignCards } from '../components/CampaignCards';

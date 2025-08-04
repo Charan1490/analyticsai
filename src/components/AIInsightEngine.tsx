@@ -6,7 +6,8 @@ import { aiInsights } from '../data/mockData';
 import './AIInsightEngine.css';
 
 export const AIInsightEngine: React.FC = () => {
-  const [loading, setLoading] = useState(false);
+  // Using loading state directly without setter as it's not currently needed
+  const loading = false;
   const [highlightedInsight, setHighlightedInsight] = useState(0);
   
   // Animation variants for container (parent)
