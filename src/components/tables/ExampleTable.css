@@ -1,0 +1,85 @@
+.campaign-table-container {
+  margin-bottom: 2rem;
+}
+
+.table-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.campaign-name {
+  font-weight: 500;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-active {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: rgb(16, 185, 129);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-paused {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: rgb(245, 158, 11);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.status-completed {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: rgb(99, 102, 241);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.metric-with-change {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.change {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 0.125rem 0.25rem;
+}
+
+.change-icon {
+  width: 12px;
+  height: 12px;
+  margin-right: 2px;
+}
+
+.change.positive {
+  color: rgb(16, 185, 129);
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.change.negative {
+  color: rgb(239, 68, 68);
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.budget, .spent {
+  font-weight: 500;
+}
+
+.budget {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.spent {
+  color: #0ea5e9;
+}

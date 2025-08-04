@@ -1,0 +1,212 @@
+/* Import Badge styles */
+@import './ui/Badge.css';
+
+.ai-insight-card {
+  display: flex;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.ai-insight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-light);
+}
+
+.ai-insight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-light), var(--accent-light));
+  border-radius: 4px 0 0 4px;
+}
+
+.dark-mode .ai-insight-card {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(51, 65, 85, 0.5);
+}
+
+.dark-mode .ai-insight-card:hover {
+  border-color: var(--primary-dark);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .ai-insight-card::before {
+  background: linear-gradient(to bottom, var(--primary-dark), var(--accent-dark));
+}
+
+.ai-insight-icon {
+  margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary-light);
+}
+
+.dark-mode .ai-insight-icon {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--primary-dark);
+}
+
+.ai-insight-content {
+  flex: 1;
+}
+
+/* Badge styling is now imported from Badge.css */
+.ai-insight-content .badge {
+  margin-bottom: 10px;
+}
+
+.ai-insight-text {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  color: var(--text-light);
+}
+
+.dark-mode .ai-insight-text {
+  color: var(--text-dark);
+}
+
+.ai-insight-action-button {
+  background: transparent;
+  border: 1px solid var(--primary-light);
+  color: var(--primary-light);
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ai-insight-action-button:hover {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.dark-mode .ai-insight-action-button {
+  border-color: var(--primary-dark);
+  color: var(--primary-dark);
+}
+
+.dark-mode .ai-insight-action-button:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+.ai-insight-card.highlighted {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 1px var(--primary-light), 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: pulse-border 2s infinite;
+}
+
+.dark-mode .ai-insight-card.highlighted {
+  border-color: var(--primary-dark);
+  box-shadow: 0 0 0 1px var(--primary-dark), 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: pulse-border-dark 2s infinite;
+}
+
+@keyframes pulse-border {
+  0% { 
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5), 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.8), 0 8px 25px rgba(59, 130, 246, 0.2); 
+  }
+  100% { 
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5), 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes pulse-border-dark {
+  0% { 
+    box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.5), 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.8), 0 8px 25px rgba(96, 165, 250, 0.3); 
+  }
+  100% { 
+    box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.5), 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.ai-insight-action-button:hover {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.dark-mode .ai-insight-action-button {
+  border-color: var(--primary-dark);
+  color: var(--primary-dark);
+}
+
+.dark-mode .ai-insight-action-button:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+/* Add CSS variables for color consistency */
+:root {
+  --warning-color-light: #f59e0b;
+  --success-color-light: #10b981;
+  --recommendation-color-light: #3b82f6;
+  
+  --warning-color-dark: #fbbf24;
+  --success-color-dark: #34d399;
+  --recommendation-color-dark: #60a5fa;
+}
+
+.ai-insight-card.highlighted {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 1px var(--primary-light), 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: pulse-border 2s infinite;
+}
+
+.dark-mode .ai-insight-card.highlighted {
+  border-color: var(--primary-dark);
+  box-shadow: 0 0 0 1px var(--primary-dark), 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulse-border {
+  0% { 
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5), 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.8), 0 8px 25px rgba(59, 130, 246, 0.2); 
+  }
+  100% { 
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5), 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.dark-mode .ai-insight-card.highlighted {
+  animation: pulse-border-dark 2s infinite;
+}
+
+@keyframes pulse-border-dark {
+  0% { 
+    box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.5), 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.8), 0 8px 25px rgba(96, 165, 250, 0.3); 
+  }
+  100% { 
+    box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.5), 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+}

@@ -1,0 +1,35 @@
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.dashboard-content .card {
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-content .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .dashboard-content .card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.dark-mode h1 {
+  color: var(--text-dark);
+}

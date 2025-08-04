@@ -1,0 +1,223 @@
+.dashboard-page {
+  padding-bottom: 3rem;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: white;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.conversion-chart-container {
+  margin: 2.5rem 0;
+  max-width: 800px;
+}
+
+.campaign-cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ai-insights-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Mobile first, then tablet, then desktop */
+@media (min-width: 640px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .campaign-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ai-insights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .charts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+  
+  /* Ensure chart containers don't get too short on tablets */
+  .chart-container-wrapper {
+    min-height: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-page {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .charts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .campaign-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .ai-insights-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Better spacing for larger screens */
+  .conversion-chart-container {
+    margin: 3rem 0;
+  }
+}
+
+.last-updated {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--secondary-light);
+  opacity: 0.8;
+  margin-right: 1rem;
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--secondary-light);
+  transition: all 0.2s ease;
+}
+
+.dark-mode .header-btn {
+  border-color: var(--border-dark);
+  color: var(--secondary-dark);
+}
+
+.header-btn:hover:not(:disabled) {
+  border-color: var(--primary-light);
+  color: var(--primary-light);
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.dark-mode .header-btn:hover:not(:disabled) {
+  border-color: var(--primary-dark);
+  color: var(--primary-dark);
+  background-color: rgba(96, 165, 250, 0.05);
+}
+
+.header-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.header-btn.loading {
+  color: var(--primary-light);
+  border-color: var(--primary-light);
+}
+
+.dark-mode .header-btn.loading {
+  color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.last-updated {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--secondary-light);
+  margin-right: 1rem;
+  padding: 0.5rem 0;
+}
+
+.dark-mode .last-updated {
+  color: var(--secondary-dark);
+}
+
+.campaigns-table-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.dark-mode .section-title {
+  color: var(--text-dark);
+}
+
+/* Animation for loader */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Chart-specific styling */
+.conversion-chart-container .chart-container-wrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-height: 450px;
+}
+
+/* Ensure proper spacing between major dashboard sections */
+.dashboard-page > div {
+  margin-bottom: 2rem;
+}
+
+/* Responsive table */
+@media (max-width: 640px) {
+  .data-table-container {
+    font-size: 0.875rem;
+  }
+  
+  .data-table-pagination-info {
+    font-size: 0.75rem;
+  }
+  
+  .pagination-pages {
+    display: none;
+  }
+}

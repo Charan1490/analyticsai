@@ -1,0 +1,41 @@
+.campaigns-page {
+  padding-bottom: 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.campaigns-container {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .campaigns-page {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.create-btn {
+  background-color: var(--primary-light);
+  color: white;
+  border: none;
+  font-weight: 500;
+}
+
+.dark-mode .create-btn {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+.create-btn:hover {
+  background-color: var(--accent-light);
+  border: none;
+  color: white;
+}
+
+.dark-mode .create-btn:hover {
+  background-color: var(--accent-dark);
+  border: none;
+}
